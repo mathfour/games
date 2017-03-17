@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Rock Paper Scissors
+    </title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var handChoices = ["paper", "scissors", "rock"];
+      var userChoice = prompt('Let\'s play! \n \n Choose rock, paper or scissors...');
+      var computerChoice = Math.round(Math.random()*10) % 3;
+
+
+      console.log(userChoice);
+
+        if (userChoice.charAt(0)==="r"){
+          userChoice = 2;
+        }
+        else if (userChoice.charAt(0)==="p") {
+          userChoice = 0;
+        }
+        else {
+          userChoice = 1;
+        }
+
+      var winnerDifference = userChoice - computerChoice;
+
+      console.log("You picked " + handChoices[userChoice]);
+      alert("You picked " + handChoices[userChoice]);
+
+      console.log("The computer picked " + handChoices[computerChoice]);
+      alert("The computer picked " + handChoices[computerChoice])
+
+      if (winnerDifference == 1 || winnerDifference == -2) {
+        console.log("You win!");
+        alert('You picked ' + handChoices[userChoice] + '\nThe computer picked ' + handChoices[computerChoice] + '\nYou win!');
+      }
+
+      else if (winnerDifference == -1 || winnerDifference == 2) {
+        console.log("You lose!");
+        alert('You picked ' + handChoices[userChoice] + '\nThe computer picked ' + handChoices[computerChoice] + '\nYou lose!');
+      }
+
+      else {
+        console.log("Hey, you tied with the computer!");
+        alert('You picked ' + handChoices[userChoice] + '\nThe computer picked ' + handChoices[computerChoice] + '\nHey, you tied with the computer!');
+      }
+    </script>
+
+
+  </body>
+</html>
